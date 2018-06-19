@@ -339,7 +339,8 @@ PHP_METHOD(fasttext, getPredict)
 	}
 
 	array_init(return_value);
-	for (int idx=0; idx<ft_vals->size; idx++) {
+	int idx=0;
+	for (idx=0; idx<ft_vals->size; idx++) {
 		fasttext_key_value_add_array(return_value, idx, ft_vals->labels[idx], ft_vals->vals[idx]);
 	}
 	FastTextKeyValuesFree(ft_vals);
@@ -371,7 +372,8 @@ PHP_METHOD(fasttext, getNN)
 	}
 
 	array_init(return_value);
-	for (int idx=0; idx<ft_vals->size; idx++) {
+	int idx=0;
+	for (idx=0; idx<ft_vals->size; idx++) {
 		fasttext_key_value_add_array(return_value, idx, ft_vals->labels[idx], ft_vals->vals[idx]);
 	}
 	FastTextKeyValuesFree(ft_vals);
@@ -403,7 +405,8 @@ PHP_METHOD(fasttext, getAnalogies)
 	}
 
 	array_init(return_value);
-	for (int idx=0; idx<ft_vals->size; idx++) {
+	int idx=0;
+	for (idx=0; idx<ft_vals->size; idx++) {
 		fasttext_key_value_add_array(return_value, idx, ft_vals->labels[idx], ft_vals->vals[idx]);
 	}
 	FastTextKeyValuesFree(ft_vals);
@@ -434,7 +437,8 @@ PHP_METHOD(fasttext, getNgramVectors)
 	}
 
 	array_init(return_value);
-	for (int idx=0; idx<ft_vals->size; idx++) {
+	int idx=0;
+	for (idx=0; idx<ft_vals->size; idx++) {
 		fasttext_value_add_array(return_value, idx, ft_vals->labels[idx], ft_vals->probs[idx]);
 	}
 	FastTextProbsFree(ft_vals);
