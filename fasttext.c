@@ -280,7 +280,8 @@ PHP_METHOD(fasttext, getSubwordVector)
 	ft_vecs = FastTextSubwordVector(ft_obj->fasttext, (const char*)word);
 
 	array_init(return_value);
-	for (int64_t idx=0; idx<ft_vecs->size; idx++) {
+	int64_t idx=0;
+	for (idx=0; idx<ft_vecs->size; idx++) {
 		fasttext_vec_add_array(return_value, (int)idx, ft_vecs->vals[idx]);
 	}
 	FastTextVectorsFree(ft_vecs);
@@ -305,7 +306,8 @@ PHP_METHOD(fasttext, getSentenceVectors)
 	ft_vecs = FastTextSubwordVector(ft_obj->fasttext, (const char*)sentence);
 
 	array_init(return_value);
-	for (int64_t idx=0; idx<ft_vecs->size; idx++) {
+	int64_t idx=0;
+	for (idx=0; idx<ft_vecs->size; idx++) {
 		fasttext_vec_add_array(return_value, (int)idx, ft_vecs->vals[idx]);
 	}
 	FastTextVectorsFree(ft_vecs);
